@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="8361f5f0-5b0d-49e0-9e4f-e195ba5b87f3" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="subha_system_apiFlow" doc:id="16dcc6e6-3d33-49e2-acb6-bfae43ef3fbc" >
+		<http:listener doc:name="Listener" doc:id="df149f85-f29e-4fff-8d3f-a136a4d9c837" config-ref="HTTP_Listener_config" path="/subha"/>
+		<set-payload value="details of subhashini" doc:name="Set Payload" doc:id="dc7ee678-30a2-44a1-a202-383d6e1177a8" />
+	</flow>
+</mule>
